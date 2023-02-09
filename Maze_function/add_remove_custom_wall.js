@@ -59,14 +59,18 @@ allow_erase = document.getElementById('removal')
 
 canvas_obj.addEventListener('mousedown',function()
 {
-    edit_wall = 1
-    // console.log("down")
+     edit_wall = 1  // console.log("down")
 })
+canvas_obj.addEventListener('touchstart',function() {edit_wall = 1}) // for mobile devices
+
+
 canvas_obj.addEventListener('mouseup',function()
 {
-    edit_wall = 0
-    // console.log("up")
+     edit_wall = 0// console.log("up")
 })
+canvas_obj.addEventListener('touchend',function(){edit_wall = 0})  // for mobile devices
+
+
 allow_draw.addEventListener('click',function(){
     // console.log('working');
     allowed_to_draw = 1 - allowed_to_draw
