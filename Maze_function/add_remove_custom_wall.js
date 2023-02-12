@@ -1,5 +1,6 @@
 
-
+mouse_down_counter = 0;
+perform_action = 0;
 
 add_wall_if_possible = function(){
     if(allowed_to_draw === 0) return 
@@ -20,7 +21,7 @@ add_wall_if_possible = function(){
 
     if(x>0 && x < rows-1 && y > 0 && y < cols - 1 && 
         grid[x][y].visited === intial_phase){
-       
+       console.log("inside draw block")     
        if(grid[x][y].visited === intial_phase)
        has_some_custom_wall++
        
@@ -28,12 +29,17 @@ add_wall_if_possible = function(){
        grid[x][y].visited = 3
        
      // 3 means special wall
+       grid[x][y].current_color(3)
        grid[x][y].walls = [true,true,true,true]
+       grid[x][y].show()  
+     //    drw();
   
     }
     // console.log("row = " + rows + " cols = " + cols)
     // console.log(x);
     // console.log(y);
+
+    // drw();
 } 
 
 
@@ -44,13 +50,19 @@ erase_wall_if_possible = function(){
 
     rows = grid.length;
     cols = grid[0].length;
+ 
     if(x>0 && x < rows-1 && y > 0 && y < cols - 1 && 
         grid[x][y].visited !== intial_phase){
-        // console.log("inside")
+        // console.log("inside erase")con
         grid[x][y].visited = intial_phase
-        // grid[x][y].walls = [false,false,false,false]
-        // console.log("inside") 
+        grid[x][y].walls = [false,false,false,false]
+        // console.log("inside")
+        // grid[x][y].current_color(0); 
+        // grid[x][y].show();
+        drw()
      }
+
+   
 }
 
 canvas_obj = document.getElementById('canvas_holder')
@@ -59,16 +71,47 @@ allow_erase = document.getElementById('removal')
 
 canvas_obj.addEventListener('mousedown',function()
 {
-     edit_wall = 1  // console.log("down")
+     edit_wall = 1 
+     mouse_down_counter++;
+    //  console.log("down")
 })
-canvas_obj.addEventListener('touchstart',function() {edit_wall = 1}) // for mobile devices
-
 
 canvas_obj.addEventListener('mouseup',function()
 {
-     edit_wall = 0// console.log("up")
+    edit_wall = 0
+    mouse_down_counter--;
+    //  console.log("up")
 })
-canvas_obj.addEventListener('touchend',function(){edit_wall = 0})  // for mobile devices
+canvas_obj.addEventListener('mousemove',function(){
+    // console.log("inside")
+    if(mouse_down_counter === 1){
+    add_wall_if_possible();
+    erase_wall_if_possible();
+   }
+})
+
+
+canvas_obj.addEventListener('touchmove',function(){
+    // console.log("inside")
+    if(mouse_down_counter === 1){
+    add_wall_if_possible();
+    erase_wall_if_possible();
+   }
+})
+
+canvas_obj.addEventListener('touchstart',function()
+{
+     edit_wall = 1 
+     mouse_down_counter++;
+    //  console.log("down")
+})
+
+canvas_obj.addEventListener('touchend',function()
+{
+    edit_wall = 0
+    mouse_down_counter--;
+    //  console.log("up")
+})
 
 
 allow_draw.addEventListener('click',function(){
@@ -76,17 +119,19 @@ allow_draw.addEventListener('click',function(){
     allowed_to_draw = 1 - allowed_to_draw
     if(allowed_to_draw === 1)     allow_to_erase = 0
    
-    
+    // console.log('working')
     // console.log("earse = " + allow_to_erase)
     // console.log("draw = " + allowed_to_draw)
 })
 
 allow_erase.addEventListener('click',function(){
-    // console.log('working')
+
     allow_to_erase = 1 - allow_to_erase
     if(allow_to_erase === 1) allowed_to_draw = 0
-
+    // console.log('working')
     // console.log("earse = " + allow_to_erase)
     // console.log("draw = " + allowed_to_draw)
 
 })
+
+
