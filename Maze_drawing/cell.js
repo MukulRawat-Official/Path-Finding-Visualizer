@@ -56,8 +56,10 @@ function Cell(i,j)
        maze colour is given by background proprocessed 
        colour is removed by reloading the cell
       */
-      if(pos === 1){ 
-          fill(250, 250,250, 100);// valid paths
+   
+      if(pos === 1)  // white color
+      { 
+          fill("#ffffff");// valid paths
        }
       else if(pos === 2){
          // console.log(i);
@@ -66,9 +68,15 @@ function Cell(i,j)
       }  
       else if(pos === 3){
        fill('#0066CC');
-      } // test colour
+      } // node that are added by user
+
+      else if(pos === 4) // start point colour
+      {
+         fill('#54de18') // green
+      }
       else { 
          fill("#0066CC");  // maze colour 
+      
       }
       rect(x, y, w, w);
    
@@ -99,16 +107,16 @@ function Cell(i,j)
     
 
     
-    if(this.walls[0] || grid_type)
+    if(this.walls[0] || grid_type === 1)
     line( x,  y, x+w,  y);
     
-    if(this.walls[1] || grid_type)
+    if(this.walls[1] || grid_type === 1)
     line(x+w ,  y,  x+w ,  y+w);
     
-    if(this.walls[2] || grid_type)
+    if(this.walls[2] || grid_type === 1)
     line(x+w , y+w , x,y+w);
 
-    if(this.walls[3] || grid_type)
+    if(this.walls[3] || grid_type === 1)
     line(x, y+w, x, y);
     
    

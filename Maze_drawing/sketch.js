@@ -17,8 +17,8 @@ var allow_to_erase = 0
 
 var has_some_custom_wall = 0
 
-let grid = []
-let stack = []
+var grid = []
+var stack = []
 // grid will store cell info 
 
 
