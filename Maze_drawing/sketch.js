@@ -125,18 +125,18 @@ function  setup(){
 
 
 function draw(){
-   background(500);
-   add_border();
-   for(var i = 0;i<grid.length;i++){
-        for(var j = 0;j<grid[i].length;j++){
-           grid[i][j].show();
-        }
-   }
+   // background(500);
+   // add_border();
+   // for(var i = 0;i<grid.length;i++){
+   //      for(var j = 0;j<grid[i].length;j++){
+   //         grid[i][j].show();
+   //      }
+   // }
 
-   if(edit_wall === 1){
-      add_wall_if_possible()
-      erase_wall_if_possible()
-   }
+   // if(edit_wall === 1){
+   //    add_wall_if_possible()
+   //    erase_wall_if_possible()
+   // }
 
    
 
