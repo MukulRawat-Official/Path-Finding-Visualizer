@@ -10,6 +10,8 @@ clear_screen = function(){
     
     has_some_custom_wall = 0
     intial_phase = 0
+
+    drw()
     
 }
 
@@ -39,16 +41,14 @@ dfs_maze_generate = function(){
      
     has_some_custom_wall = 0
     intial_phase = 1
+
+    drw()
 }
 
 show_grid = function(){
 
     grid_type = 1 - grid_type
-    // console.log(grid_type)
-    for(let x of grid)
-    for(let ele of x){
-     ele.show()
-    }
+    drw()
 }
 
 frm.addEventListener('click', function(){
