@@ -104,33 +104,37 @@ canvas_obj.addEventListener('mousemove',function(){
 })
 
 
-// canvas_obj.addEventListener('touchmove',function(){
-//     if(mouse_down_counter === 1){
+canvas_obj.addEventListener('touchmove',function(){
+    if(mouse_down_counter === 1){
    
-//         if(st_pt_mode=== 1) {
-//             add_starting_point();
-//         }
-//         else
-//         {
-//          add_wall_if_possible();
-//          erase_wall_if_possible();
-//         }
-//     }
-// })
+        if(st_pt_mode=== 1) {
+            add_starting_point();
+        }
 
-// canvas_obj.addEventListener('touchstart',function()
-// {
-//      edit_wall = 1 
-//      mouse_down_counter++;
-//     //  console.log("down")
-// })
+        else if(end_pt_mode === 1){
+            add_ending_point();
+        }
+        else
+        {
+         add_wall_if_possible();
+         erase_wall_if_possible();
+        }
+   }
+})
 
-// canvas_obj.addEventListener('touchend',function()
-// {
-//     edit_wall = 0
-//     mouse_down_counter--;
-//     //  console.log("up")
-// })
+canvas_obj.addEventListener('touchstart',function()
+{
+     edit_wall = 1 
+     mouse_down_counter++;
+    //  console.log("down")
+})
+
+canvas_obj.addEventListener('touchend',function()
+{
+    edit_wall = 0
+    mouse_down_counter--;
+    //  console.log("up")
+})
 
 
 allow_draw.addEventListener('click',function(){
