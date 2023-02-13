@@ -12,6 +12,8 @@ clear_screen = function(){
     intial_phase = 0
     st_point_mode = 0
     end_point_mode = 0
+    prev_start_xx = prev_end_xx = prev_start_yy = prev_end_yy = -1 
+
     
 
     drw()
@@ -42,7 +44,6 @@ dfs_maze_generate = function(){
 
     }
      
-    has_some_custom_wall = 0
     intial_phase = 1
 
     drw()

@@ -1,9 +1,6 @@
-prev_start_xx = -1 
-prev_start_yy = -1
-prev_end_xx = -1
-prev_end_yy = -1
-st_pt_mode = 0
-end_pt_mode = 0
+prev_start_xx = prev_end_xx = prev_start_yy = prev_end_yy = -1 
+st_pt_mode = end_pt_mode =  0
+
 // above two for starting and ending point
 
 start_pt = document.getElementById('Start_point')
