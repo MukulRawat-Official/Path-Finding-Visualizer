@@ -4,10 +4,15 @@ function Cell(i,j)
    this.j = j;
    //  j = cols 
    //  i = rows
+   this.path = [[this.i,this.j]]
    this.walls = [true, true, true ,true]
    this.visited = 0;
    //  Tops right bottom left
    
+   this.update_path = function(ele){
+      this.path = ele.path;
+      this.push([this.i,this.j]);
+   }
 
    this.giveNeighbours = function(){
       var neighbours = []
@@ -78,6 +83,14 @@ function Cell(i,j)
       {
          fill('#FFC0CB')
       }
+      // 6-> cyan colour for algorithm path  , 7 -> yellow colour for final path
+      else if(pos === 6){
+           fill('#04D4F0') // -> toruquiso colour blue green type
+      }
+      // else if(pos === 7) // yellow colour for paths
+      // {
+      //      fill('#FFFF00')
+      // }
       else { 
          fill("#0066CC");  // maze colour 
       
@@ -90,8 +103,8 @@ function Cell(i,j)
   
    
    this.show = function(){
-    x = this.i * w;
-    y = this.j * w;
+    this.x = this.i * w;
+    this.y = this.j * w;
     
     
    //  stroke(15);
@@ -112,20 +125,20 @@ function Cell(i,j)
 
     
     if(this.walls[0] || grid_type === 1)
-    line( x,  y, x+w,  y);
+    line( this.x,  this.y, this.x+w,  this.y);
     
     if(this.walls[1] || grid_type === 1)
-    line(x+w ,  y,  x+w ,  y+w);
+    line(this.x+w ,  this.y,  this.x+w ,  this.y+w);
     
     if(this.walls[2] || grid_type === 1)
-    line(x+w , y+w , x,y+w);
+    line(this.x+w , this.y+w , this.x,this.y+w);
 
     if(this.walls[3] || grid_type === 1)
-    line(x, y+w, x, y);
+    line(this.x, this.y+w, this.x, this.y);
     
    
   
-    if(intial_phase !== 0 || this.visited >= 2)
+    if(intial_phase !== 0 || this.visited > 1)
     this.current_color(this.visited);
     //  this.visited 2 for border colour 
    //   this.visted 3 special blue colour -> not visited
