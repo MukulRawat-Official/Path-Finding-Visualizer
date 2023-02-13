@@ -10,6 +10,9 @@ clear_screen = function(){
     
     has_some_custom_wall = 0
     intial_phase = 0
+    st_point_mode = 0
+    end_point_mode = 0
+    
 
     drw()
     
