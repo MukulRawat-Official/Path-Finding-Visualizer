@@ -134,11 +134,6 @@ function draw(){
            grid[i][j].show();
         }
    }
-
-   if(edit_wall === 1){
-      add_wall_if_possible()
-      erase_wall_if_possible()
-   }
 }  
 
 
