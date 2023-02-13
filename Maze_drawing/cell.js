@@ -74,7 +74,8 @@ function Cell(i,j)
       {
          fill('#54de18') // green
       }
-      else if(pos === 5){
+      else if(pos === 5) // end point colour
+      {
          fill('#FFC0CB')
       }
       else { 
