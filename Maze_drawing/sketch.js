@@ -6,7 +6,8 @@ var intial_phase = 0
 // grid type is for whether to grid or not at mazeformation
 var grid_type = 1
 var edit_wall = 0
-var allowed_to_draw = 0 , allow_to_erase = 0
+var allowed_to_draw = 0;
+var allow_to_erase = 0
 /*
    as draw code is repeating i put intial pase to 0 meaning at start
    cell will be all while which i toggle with form maze button afterwards
@@ -72,6 +73,22 @@ function removeWalls(a,b){
    }
 }
 
+function drw(){
+   // background(500);
+   // add_border();
+   // for(var i = 0;i<grid.length;i++){
+   //      for(var j = 0;j<grid[i].length;j++){
+   //         grid[i][j].show();
+   //      }
+   // }
+
+   // if(edit_wall === 1){
+   //    add_wall_if_possible()
+   //    erase_wall_if_possible()
+   // }
+
+   
+}
 
 
 
@@ -103,7 +120,6 @@ function  setup(){
 
    current_cell = grid[1][1];
    drw()
-   
 }
 
 
@@ -130,10 +146,5 @@ function draw(){
       add_wall_if_possible()
       erase_wall_if_possible()
    }
-
-   
-
-}  
-
 
 

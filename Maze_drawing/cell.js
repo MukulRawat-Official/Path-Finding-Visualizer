@@ -74,6 +74,9 @@ function Cell(i,j)
       {
          fill('#54de18') // green
       }
+      else if(pos === 5){
+         fill('#FFC0CB')
+      }
       else { 
          fill("#0066CC");  // maze colour 
       
