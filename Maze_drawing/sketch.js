@@ -142,9 +142,9 @@ function draw(){
         }
    }
 
-   if(edit_wall === 1){
-      add_wall_if_possible()
-      erase_wall_if_possible()
-   }
+   // if(edit_wall === 1){
+   //    add_wall_if_possible()
+   //    erase_wall_if_possible()
+   // }
 }
 
