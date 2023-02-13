@@ -146,5 +146,5 @@ function draw(){
       add_wall_if_possible()
       erase_wall_if_possible()
    }
-
+}
 
