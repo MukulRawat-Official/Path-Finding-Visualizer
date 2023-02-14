@@ -1,6 +1,7 @@
 call_bfs = function(){
-   this.i  = prev_start_xx
-   this.j  = prev_start_yy
+   
+   i  = prev_start_xx
+   j  = prev_start_yy
    dest_i = prev_end_xx
    dest_j = prev_end_yy
    
@@ -11,6 +12,8 @@ call_bfs = function(){
    q = new Queue();
    answer_possible = false
    q.push(grid[i][j])
+
+   console.log(q.front())
    
    left = [0,1,0,-1] 
    right = [1,0,-1,0]
@@ -41,20 +44,40 @@ call_bfs = function(){
     
     visited[i][j] = true; 
    while(q.size() !== 0){
+   
     curr = q.front(); q.pop();
-    i = curr.i
-    j = curr.j
+
+    
+    this.i = curr.i
+    this.j = curr.j
    
 
     for(idx = 0; idx<4;idx++){
-        x = i + left[idx] 
-        x = int(x)
-        y = j + right[idx]
-        y = int(y)
-       if( x>0 && x < rows-1 && y > 0 && y < cols - 1 && 
-        visited[x][y] === false){
-           
-            if(x === dest_i && y === dest_j){
+        this.x =  this.i  + left[idx]
+        this.y =   this.j + right[idx]
+       
+        console.log("i = "+ this.i + " j = " + this.j)
+        console.log("x = "+ this.x + " y = " + this.y)
+
+
+       if( this.x>0 && this.x < rows-1 && this.y > 0 && this.y < cols - 1 && 
+        visited[this.x][this.y] === false){
+            
+         
+            // grid[this.x][this.y].add_path(curr);
+
+            if(this.x === dest_i && this.y === dest_j)
+            {
+
+            console.log(grid[this.x][this.y].path)
+            // for(idx = 0; idx <grid[this.x][this.y].path.length-1; idx++)
+            // {
+            //    xx = grid[this.x][this.y].path[idx][0]
+            //    yy = grid[this.x][this.y].path[idx][1]
+               
+            //    if(xx !== prev_start_xx || yy !== prev_start_yy)
+            //    grid[xx][yy].visited = 7;
+            // }    
                 alert('found')
                 return;
             }
@@ -63,20 +86,24 @@ call_bfs = function(){
            
 
             // below function is to check for others
-           else if( grid[x][y].visited === intial_phase ){
-            visited[x][y] = true;
-            grid[x][y].visited = 6
+           else if( grid[this.x][this.y].visited === intial_phase ){
+            visited[this.x][this.y] = true;
+            grid[this.x][this.y].visited = 6 
+            grid[this.x][this.y].walls = [true,true,true,true]
             
-            
+        
             // 6 -> visited , 7 -> final yellow path
-            q.push(grid[x][y]) 
+            q.push(grid[this.x][this.y]) 
+
+        
            
           }
         }
     }
-    
+    drw()
    }
-
+   
+ 
    alert('path not found')
 
 }

@@ -17,9 +17,6 @@ class Queue {
     front() {
       return this.elements[this.head];
     }
-    length() {
-      return this.tail - this.head;
-    }
     size() {
       return this.tail - this.head;
     }

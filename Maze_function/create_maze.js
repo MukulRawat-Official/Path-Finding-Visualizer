@@ -6,6 +6,7 @@ clear_screen = function(){
     for(let ele of x){
      ele.visited = 0;
      ele.walls = [true,true,true,true]
+     ele.path = []
     }
     
     has_some_custom_wall = 0

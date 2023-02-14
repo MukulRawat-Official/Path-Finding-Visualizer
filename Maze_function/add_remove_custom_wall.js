@@ -82,6 +82,7 @@ canvas_obj.addEventListener('mouseup',function()
 {
     edit_wall = 0
     mouse_down_counter--;
+    drw()
     //  console.log("up")
 })
 canvas_obj.addEventListener('mousemove',function(){

@@ -73,22 +73,6 @@ function removeWalls(a,b){
    }
 }
 
-function drw(){
-   // background(500);
-   // add_border();
-   // for(var i = 0;i<grid.length;i++){
-   //      for(var j = 0;j<grid[i].length;j++){
-   //         grid[i][j].show();
-   //      }
-   // }
-
-   // if(edit_wall === 1){
-   //    add_wall_if_possible()
-   //    erase_wall_if_possible()
-   // }
-
-   
-}
 
 
 
@@ -119,29 +103,31 @@ function  setup(){
 
 
    current_cell = grid[1][1];
+   // frameRate(30)
    drw()
 }
 
 
 
 function drw(){
-   //  background(500);
-   // add_border();
-   // for(var i = 0;i<grid.length;i++){
-   //      for(var j = 0;j<grid[i].length;j++){
-   //         grid[i][j].show();
-   //      }
-   // }
-}
-function draw(){
-   background(500);
+    background(500);
    add_border();
    for(var i = 0;i<grid.length;i++){
         for(var j = 0;j<grid[i].length;j++){
            grid[i][j].show();
         }
    }
-
+}
+function draw(){
+   // background(500);
+   // add_border();
+   // for(var i = 0;i<grid.length;i++){
+   //      for(var j = 0;j<grid[i].length;j++){
+   //         grid[i][j].show();
+   //      }
+   // }
+   
+   console.log("loop")
    // if(edit_wall === 1){
    //    add_wall_if_possible()
    //    erase_wall_if_possible()
