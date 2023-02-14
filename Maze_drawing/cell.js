@@ -4,13 +4,13 @@ function Cell(i,j)
    this.j = j;
    //  j = cols 
    //  i = rows
-   this.res_path =[[this.i,this.j]]
+   this.res_path = []
    this.walls = [true, true, true ,true]
    this.visited = 0;
    //  Tops right bottom left
    
    this.add_path = function(prev){
-      this.res_path = [] 
+      this.res_path = {} 
       for(idx = 0;idx<prev.res_path.length;idx++){
          this.xx = parseInt(prev.res_path[idx][0])
          this.yy = parseInt(prev.res_path[idx][1])

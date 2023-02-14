@@ -1,4 +1,9 @@
-call_bfs = function(){
+function sleep(ms) {
+   return new Promise(resolve => setTimeout(resolve, ms));
+ }
+
+async function call_bfs()
+{
    
    i  = prev_start_xx
    j  = prev_start_yy
@@ -51,7 +56,7 @@ call_bfs = function(){
     this.i = curr.i
     this.j = curr.j
    
-
+   
     for(idx = 0; idx<4;idx++){
         this.x =  this.i  + left[idx]
         this.y =   this.j + right[idx]
@@ -69,15 +74,15 @@ call_bfs = function(){
             if(this.x === dest_i && this.y === dest_j)
             {
 
-            console.log(grid[this.x][this.y].path)
-            for(idx = 0; idx <grid[this.x][this.y].path.length-1; idx++)
-            {
-               xx = grid[this.x][this.y].path[idx][0]
-               yy = grid[this.x][this.y].path[idx][1]
+            // console.log(grid[this.x][this.y].path)
+            // for(idx = 0; idx <grid[this.x][this.y].path.length-1; idx++)
+            // {
+            //    xx = grid[this.x][this.y].path[idx][0]
+            //    yy = grid[this.x][this.y].path[idx][1]
                
-               if(xx !== prev_start_xx || yy !== prev_start_yy)
-               grid[xx][yy].visited = 7;
-            }    
+            //    if(xx !== prev_start_xx || yy !== prev_start_yy)
+            //    grid[xx][yy].visited = 7;
+            // }    
                 alert('found')
                 return;
             }
@@ -90,14 +95,14 @@ call_bfs = function(){
             visited[this.x][this.y] = true;
             grid[this.x][this.y].visited = 6 
             grid[this.x][this.y].walls = [true,true,true,true]
-            grid[this.x][this.y].show()
-            
-            setTimeout(()=>{},1000);
+            grid[this.x][this.y].show() 
             // 6 -> visited , 7 -> final yellow path
              q.push(grid[this.x][this.y]) 
           }
         }
     }
+
+    await sleep(30);
     // drw()
    }
    

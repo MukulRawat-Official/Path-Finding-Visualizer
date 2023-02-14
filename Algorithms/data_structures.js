@@ -18,6 +18,6 @@ class Queue {
       return this.elements[this.head];
     }
     size() {
-      return this.tail - this.head;
+      return parseInt(this.tail - this.head);
     }
 }
