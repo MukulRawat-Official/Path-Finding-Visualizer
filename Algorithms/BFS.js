@@ -70,14 +70,14 @@ call_bfs = function(){
             {
 
             console.log(grid[this.x][this.y].path)
-            // for(idx = 0; idx <grid[this.x][this.y].path.length-1; idx++)
-            // {
-            //    xx = grid[this.x][this.y].path[idx][0]
-            //    yy = grid[this.x][this.y].path[idx][1]
+            for(idx = 0; idx <grid[this.x][this.y].path.length-1; idx++)
+            {
+               xx = grid[this.x][this.y].path[idx][0]
+               yy = grid[this.x][this.y].path[idx][1]
                
-            //    if(xx !== prev_start_xx || yy !== prev_start_yy)
-            //    grid[xx][yy].visited = 7;
-            // }    
+               if(xx !== prev_start_xx || yy !== prev_start_yy)
+               grid[xx][yy].visited = 7;
+            }    
                 alert('found')
                 return;
             }
@@ -90,17 +90,15 @@ call_bfs = function(){
             visited[this.x][this.y] = true;
             grid[this.x][this.y].visited = 6 
             grid[this.x][this.y].walls = [true,true,true,true]
+            grid[this.x][this.y].show()
             
-        
+            setTimeout(()=>{},1000);
             // 6 -> visited , 7 -> final yellow path
-            q.push(grid[this.x][this.y]) 
-
-        
-           
+             q.push(grid[this.x][this.y]) 
           }
         }
     }
-    drw()
+    // drw()
    }
    
  
