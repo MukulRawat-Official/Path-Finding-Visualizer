@@ -1,8 +1,16 @@
-function sleep(ms) {
-   return new Promise(resolve => setTimeout(resolve, ms));
- }
 
-async function call_bfs()
+
+function sleep(ms) {
+ return new Promise(resolve => setTimeout(resolve, ms));
+  } 
+// it will asynchrnoize function only , since our time gap is small im using a code which will wait whole js program
+//  for large delay above code is preferred    , dont't forget to add async to our function
+
+
+
+
+ // if above function applied add async
+ async function call_bfs()
 {
    
    i  = prev_start_xx
@@ -92,7 +100,8 @@ async function call_bfs()
         }
     }
 
-    await sleep(30);
+
+    await sleep(1);
     // drw()
    }
    
