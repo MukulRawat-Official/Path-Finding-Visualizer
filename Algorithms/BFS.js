@@ -17,7 +17,7 @@ function sleep(ms) {
 
 
  // if above function applied add async
- async function call_bfs()
+async function call_bfs()
 {
    
    algo_mode = 1
@@ -27,6 +27,16 @@ function sleep(ms) {
    dest_i = prev_end_xx
    dest_j = prev_end_yy
    
+
+   this.rows = grid.length
+   this.cols = grid[0].length
+
+   for(r = 1;r<this.rows-1;r++){
+    for(c = 1;c<this.cols-1;c++){
+      if(grid[i][j].visited === 5) {i = r; j = c;}
+      if(grid[i][j].visited === 6) {dest_i = r; dest_j = c;}
+    }
+   }
   
 //    grid[i][j].visited = 6
 // visited is use to set current colour
@@ -86,7 +96,7 @@ function sleep(ms) {
 
        if( this.x>0 && this.x < rows-1 && this.y > 0 && this.y < cols - 1 && 
         visited[this.x][this.y] === false){
-          grid[this.x][this.y].res_path.push(...curr.res_path)
+         await grid[this.x][this.y].res_path.push(...curr.res_path)
         
          
           //  await sleep(2)
@@ -94,9 +104,9 @@ function sleep(ms) {
             {
                 
                 console.log(grid[this.x][this.y])
-                this.path = grid[this.x][this.y].res_path  
+                let path = grid[this.x][this.y].res_path  
                 alert('found')
-                for(i = 0; i<this.path.length;i++) 
+                for(i = 0; i<path.length;i++) 
                 {
                  
                   this.xx =   path[i][0]

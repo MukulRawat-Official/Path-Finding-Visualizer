@@ -3,7 +3,7 @@ clr = document.getElementById('clr')
 shw_grid = document.getElementById('show_grid')
 clear_screen = function(){
 
-   if(algo_mode === 1) return
+    if(algo_mode === 1) return
     for(let x of grid)
     for(let ele of x){
      ele.visited = 0;
@@ -26,7 +26,7 @@ clear_screen = function(){
 
 dfs_maze_generate = function(){
 
-    if(algo_mode === 1) return
+   
 
     // if(has_some_custom_wall === 0)
     clear_screen()
@@ -56,13 +56,13 @@ dfs_maze_generate = function(){
 }
 
 show_grid = function(){
-
+    if(algo_mode === 1) return
     grid_type = 1 - grid_type
     drw()
 }
 
 frm.addEventListener('click', function(){
-    
+    if(algo_mode === 1) return
     dfs_maze_generate()
 });
 

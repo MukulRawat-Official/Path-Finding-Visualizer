@@ -74,6 +74,7 @@ allow_erase = document.getElementById('removal')
 
 canvas_obj.addEventListener('mousedown',function()
 {
+    if(algo_mode === 1) return
      edit_wall = 1 
      mouse_down_counter++;
     //  console.log("down")
@@ -81,6 +82,7 @@ canvas_obj.addEventListener('mousedown',function()
 
 canvas_obj.addEventListener('mouseup',function()
 {
+    if(algo_mode === 1) return
     edit_wall = 0
     mouse_down_counter--;
     drw()
@@ -88,6 +90,7 @@ canvas_obj.addEventListener('mouseup',function()
 })
 canvas_obj.addEventListener('mousemove',function(){
     // console.log("inside")
+    if(algo_mode === 1) return
     if(mouse_down_counter === 1){
    
         if(st_pt_mode=== 1) {
@@ -107,6 +110,7 @@ canvas_obj.addEventListener('mousemove',function(){
 
 
 canvas_obj.addEventListener('touchmove',function(){
+    if(algo_mode === 1) return
     if(mouse_down_counter === 1){
    
         if(st_pt_mode=== 1) {
@@ -126,6 +130,7 @@ canvas_obj.addEventListener('touchmove',function(){
 
 canvas_obj.addEventListener('touchstart',function()
 {
+    if(algo_mode === 1) return
      edit_wall = 1 
      mouse_down_counter++;
     //  console.log("down")
@@ -133,6 +138,7 @@ canvas_obj.addEventListener('touchstart',function()
 
 canvas_obj.addEventListener('touchend',function()
 {
+    if(algo_mode === 1) return
     edit_wall = 0
     mouse_down_counter--;
     //  console.log("up")
@@ -141,6 +147,7 @@ canvas_obj.addEventListener('touchend',function()
 
 allow_draw.addEventListener('click',function(){
     // console.log('working');
+    if(algo_mode === 1) return
     allowed_to_draw = 1 - allowed_to_draw
     if(allowed_to_draw === 1)    { 
         allow_to_erase = 0
@@ -153,7 +160,7 @@ allow_draw.addEventListener('click',function(){
 })
 
 allow_erase.addEventListener('click',function(){
-
+    if(algo_mode === 1) return
     allow_to_erase = 1 - allow_to_erase
     if(allow_to_erase === 1) {
         allowed_to_draw = 0
