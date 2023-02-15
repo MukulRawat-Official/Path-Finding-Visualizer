@@ -2,6 +2,8 @@ frm = document.getElementById('Fmaze')
 clr = document.getElementById('clr')
 shw_grid = document.getElementById('show_grid')
 clear_screen = function(){
+
+   if(algo_mode === 1) return
     for(let x of grid)
     for(let ele of x){
      ele.visited = 0;
@@ -18,10 +20,13 @@ clear_screen = function(){
     
 
     drw()
+ 
     
 }
 
 dfs_maze_generate = function(){
+
+    if(algo_mode === 1) return
 
     // if(has_some_custom_wall === 0)
     clear_screen()

@@ -14,3 +14,12 @@ bfs_obj.addEventListener('click',function(){
     call_bfs();
 
 })
+
+
+set_button_off = function(){
+    edit_wall = 0
+    allowed_to_draw = 0
+    allow_to_erase = 0
+    start_pt_mode = 0
+    end_pt_mode = 0
+}

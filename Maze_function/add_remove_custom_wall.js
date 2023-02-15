@@ -4,7 +4,8 @@ perform_action = 0;
 
 
 add_wall_if_possible = function(){
-    if(allowed_to_draw === 0) return 
+    
+    if(allowed_to_draw === 0 || algo_mode === 1) return 
     // console.log("ill try to add wall")
     x = int(mouseX/widthOfEachSquareCell)
     y = int(mouseY/widthOfEachSquareCell)
@@ -45,7 +46,7 @@ add_wall_if_possible = function(){
 
 
 erase_wall_if_possible = function(){
-    if(allow_to_erase === 0) return;
+    if(allow_to_erase === 0 || algo_mode === 1) return;
     x = int(mouseX/widthOfEachSquareCell)
     y = int(mouseY/widthOfEachSquareCell)
 

@@ -1,4 +1,4 @@
-
+algo_mode = 0
 
 function sleep(ms) {
  return new Promise(resolve => setTimeout(resolve, ms));
@@ -13,6 +13,8 @@ function sleep(ms) {
  async function call_bfs()
 {
    
+   algo_mode = 1
+   set_button_off();
    i  = prev_start_xx
    j  = prev_start_yy
    dest_i = prev_end_xx
@@ -58,6 +60,7 @@ function sleep(ms) {
     visited[i][j] = true; 
    while(q.size() !== 0){
    
+
     curr = q.front(); q.pop();
 
     
@@ -82,6 +85,7 @@ function sleep(ms) {
             if(this.x === dest_i && this.y === dest_j)
             {
                 alert('found')
+                algo_mode = 0
                 return;
             }
              // need to handle start and end point differenlty 
@@ -95,7 +99,7 @@ function sleep(ms) {
             grid[this.x][this.y].walls = [true,true,true,true]
             grid[this.x][this.y].show() 
             // 6 -> visited , 7 -> final yellow path
-             q.push(grid[this.x][this.y]) 
+            q.push(grid[this.x][this.y]) 
           }
         }
     }
@@ -105,7 +109,7 @@ function sleep(ms) {
     // drw()
    }
    
- 
+   
    alert('path not found')
-
+   algo_mode = 0
 }

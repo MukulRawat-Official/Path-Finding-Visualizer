@@ -7,6 +7,7 @@ start_pt = document.getElementById('Start_point')
 end_pt = document.getElementById('End_point')
 
 start_pt.addEventListener('click',function(){
+    if(algo_mode === 1) return
     st_pt_mode = 1 - st_pt_mode
     if(st_pt_mode=== 1){
     allowed_to_draw = 0
@@ -19,6 +20,7 @@ start_pt.addEventListener('click',function(){
 )
 
 end_pt.addEventListener('click',function(){
+    if(algo_mode === 1) return
     end_pt_mode = 1 - end_pt_mode
     if(end_pt_mode === 1){
     allowed_to_draw = 0
