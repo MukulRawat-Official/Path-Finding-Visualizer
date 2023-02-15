@@ -9,16 +9,6 @@ function Cell(i,j)
    this.visited = 0;
    //  Tops right bottom left
    
-   this.add_path = function(prev){
-      this.res_path = {} 
-      for(idx = 0;idx<prev.res_path.length;idx++){
-         this.xx = parseInt(prev.res_path[idx][0])
-         this.yy = parseInt(prev.res_path[idx][1])
-
-         this.res_path.push([this.xx,this.yy])
-      }
-      this.res_path.push([this.i,this.j])
-   }
 
    this.giveNeighbours = function(){
       var neighbours = []
@@ -120,8 +110,8 @@ function Cell(i,j)
    
    
    if(this.visited === 6) stroke('#04D4F0')
+   else if(this.visited === 7) stroke('#FFFF00')
    else if(i === 0 || i === rows - 1 || j === 0 || j  === cols- 1) stroke('#282C35') // border
-
    else if(grid_type === 1 && this.visited > 0 && this.visited !== 3)stroke('#add8e6') // path -> light cyan colours
    else if(this.visited === 0 || this.visited === 3) stroke("#0066CC") // maze color -> blue
    

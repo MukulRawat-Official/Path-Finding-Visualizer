@@ -3,10 +3,17 @@ algo_mode = 0
 function sleep(ms) {
  return new Promise(resolve => setTimeout(resolve, ms));
   } 
+
 // it will asynchrnoize function only , since our time gap is small im using a code which will wait whole js program
 //  for large delay above code is preferred    , dont't forget to add async to our function
 
-
+// function sleep(milliseconds) {
+//   const date = Date.now();
+//   let currentDate = null;
+//   do {
+//     currentDate = Date.now();
+//   } while (currentDate - date < milliseconds);
+// }
 
 
  // if above function applied add async
@@ -67,24 +74,40 @@ function sleep(ms) {
     this.i = curr.i
     this.j = curr.j
    
+    console.log("i = "+ this.i + " j = " + this.j)
    
     for(idx = 0; idx<4;idx++){
         this.x =  this.i  + left[idx]
         this.y =   this.j + right[idx]
        
-        console.log("i = "+ this.i + " j = " + this.j)
+     
         console.log("x = "+ this.x + " y = " + this.y)
 
 
        if( this.x>0 && this.x < rows-1 && this.y > 0 && this.y < cols - 1 && 
         visited[this.x][this.y] === false){
-            
+          grid[this.x][this.y].res_path.push(...curr.res_path)
+        
          
-            // grid[this.x][this.y].add_path(curr);
-
+          //  await sleep(2)
             if(this.x === dest_i && this.y === dest_j)
             {
+                
+                console.log(grid[this.x][this.y])
+                this.path = grid[this.x][this.y].res_path  
                 alert('found')
+                for(i = 0; i<this.path.length;i++) 
+                {
+                 
+                  this.xx =   path[i][0]
+                  this.yy =   path[i][1]
+                  console.log(xx + "  " + yy);
+                  grid[this.xx][this.yy].visited = 7
+                  grid[this.xx][this.yy].show()
+                  
+                  await sleep(60)
+                }
+               
                 algo_mode = 0
                 return;
             }
@@ -98,14 +121,20 @@ function sleep(ms) {
             grid[this.x][this.y].visited = 6 
             grid[this.x][this.y].walls = [true,true,true,true]
             grid[this.x][this.y].show() 
+
+            grid[this.x][this.y].res_path.push([this.x,this.y])
             // 6 -> visited , 7 -> final yellow path
             q.push(grid[this.x][this.y]) 
           }
+
+          await sleep(1);
         }
+
+ 
     }
 
 
-    await sleep(1);
+    // await sleep(1);
     // drw()
    }
    
