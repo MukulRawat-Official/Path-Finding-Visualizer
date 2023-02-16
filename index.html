@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>p5.js example</title>
+  <script src="https://kit.fontawesome.com/82f797382f.js" crossorigin="anonymous"></script>
   <script src="Libraries/p5.min.js"></script>
   <script src="libraries/addons/p5.sound.min.js"></script>
   <script src="Maze_drawing/sketch.js"></script>
@@ -16,16 +17,45 @@
 
 
 <body>
-  
+
+
+	<nav class="navbar">
+		<div class="logo_header">
+		  Path finding Visualizer
+		</div>
+	
+		
+		<div class="main_nav">
+		  
+		  <li>
+			<a href="#" id="Fmaze">Form Maze</a>
+		  </li>
+		  <li>
+			<a href="#" id ="Start_point">Add starting point</a>
+		  </li>
+		  <li>
+			<a href="#" id="End_point">Add End point</a>
+		  </li>
+		  <li><a href="#" id ="show_grid">Toggle Grid View</a></li>
+		  <li><a href="#" id = "clr">Clear</a></li>
+		  <li><a href="#" id = "obstacle">Draw Blocks</a></li>
+		  <li><a href="#" id = "removal">Remove Blocks</a></li>
+		  <li><a href="#" id = "bfs">Visualize Bfs</a></li>
+		</div>
+		  
+	</nav>
+
+
+  <!-- nav end -->
  <div>
-  <button id= "Fmaze">Form Maze</button>
-  <button id="clr">Clear</button> 
-  <button id="Start_point">Add Starting point</button>
-  <button id = "show_grid">Show Grid</button>
-  <button id="obstacle">Draw Blocks</button>
-  <button id="removal">Remove Blocks</button>
-  <button id ="End_point">Add End Point</button>
-  <button id="bfs">Visualize BFS</button>
+  <!-- <button id= "Fmaze">Form Maze</button> -->
+  <!-- <button id="clr">Clear</button>  -->
+  <!-- <button id="Start_point">Add Starting point</button> -->
+  <!-- <button id = "show_grid">Show Grid</button> -->
+  <!-- <button id="obstacle">Draw Blocks</button> -->
+  <!-- <button id="removal">Remove Blocks</button> -->
+  <!-- <button id ="End_point">Add End Point</button> -->
+  <!-- <button id="bfs">Visualize BFS</button> -->
 </div>
 
 <div id="canvas_holder"> </div>

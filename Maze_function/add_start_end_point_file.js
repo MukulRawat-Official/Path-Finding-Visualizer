@@ -8,7 +8,8 @@ end_pt = document.getElementById('End_point')
 
 start_pt.addEventListener('click',function(){
     if(algo_mode === 1) return
-    st_pt_mode = 1 - st_pt_mode
+    // st_pt_mode = 1 - st_pt_mode
+    st_pt_mode = 1
     if(st_pt_mode=== 1){
     allowed_to_draw = 0
     allow_to_erase = 0
@@ -21,7 +22,8 @@ start_pt.addEventListener('click',function(){
 
 end_pt.addEventListener('click',function(){
     if(algo_mode === 1) return
-    end_pt_mode = 1 - end_pt_mode
+    //  end_pt_mode = 1 - end_pt_mode
+    end_pt_mode = 1
     if(end_pt_mode === 1){
     allowed_to_draw = 0
     allow_to_erase = 0
