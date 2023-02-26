@@ -73,11 +73,13 @@ function Cell(i,j)
 
       else if(pos === 4) // start point colour
       {
-         fill('#54de18') // green
+         // fill('#54de18') // green
+         fill('#02A80F')
       }
       else if(pos === 5) // end point colour
       {
-         fill('#FFC0CB')
+         // fill('#FFC0CB')
+         fill('#CC0000')
       }
       // 6-> cyan colour for algorithm path  , 7 -> yellow colour for final path
       else if(pos === 6){
