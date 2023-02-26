@@ -31,8 +31,6 @@ button{
   line-height: 1.4;
   border-radius: 20px;
   padding: 5px 10px 5px 10px;
-  -webkit-font-smoothing: subpixel-antialiased;
-  -webkit-transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
   transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
   background-color: #bdc3e1;
 }
